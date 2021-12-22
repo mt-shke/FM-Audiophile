@@ -1,8 +1,12 @@
-export default function Home() {
+import SectionHomeLanding from "../components/home/SectionHomeLanding";
+
+const Home = () => {
 	return (
-		<section>
-			<h1 className="text-blue-500 font-bold text-5xl">Let's gooo</h1>
-			<p className="text-gray-300">Hello</p>
-		</section>
+		<>
+			<SectionHomeLanding />
+			<section className="bg-orange text-white h-4"></section>
+		</>
 	);
-}
+};
+
+export default Home;

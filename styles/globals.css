@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		@apply font-manrope text-[15px] leading-[25px];
+	}
+
+	header,
+	main,
+	footer {
+		@apply mx-auto grid items-center;
+	}
+
+	h1 {
+		@apply font-bold text-[56px] leading-[58px] tracking-[2px];
+	}
+	h2 {
+		@apply font-bold text-[40px] leading-[44px] tracking-[1.5px];
+	}
+	h3 {
+		@apply font-bold text-[32px] leading-[36px] tracking-[1.15px];
+	}
+	h4 {
+		@apply font-bold text-[28px] leading-[38px] tracking-[2px];
+	}
+	h5 {
+		@apply font-bold text-[24px] leading-[33px] tracking-[1.7px];
+	}
+	h6 {
+		@apply font-bold text-[18px] leading-[24px] tracking-[1.3px];
+	}
+}
+
+@layer components {
+	.overline {
+		@apply font-normal text-[14px] leading-[19px] tracking-[10px];
+	}
+
+	.subTitle {
+		@apply font-bold text-[13px] leading-[25px] tracking-[1px];
+	}
+
+	.home-landing {
+		height: calc(100vh - 6rem);
+	}
+}
