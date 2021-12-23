@@ -8,43 +8,98 @@
 - Style
 - Components
 - Functionnalities
-- Backend api/db ? => Learn more firebase
+- Backend api/db ? => Learn more about firebase
 
 </details>
+
+## TailwindCSS
 
 <details>
 <summary>TailwindCSS</summary>
 
-#### Set custom styles & classes
-
 <details>
-<summary>Add Custom style/class</summary>
+<summary>Init tailwind with next js & set starter styles</summary>
+
+- https://tailwindcss.com/docs/guides/nextjs
+
+```js
+//  npx create-next-app my-project
+//  cd my-project
+
+// npm install -D tailwindcss postcss autoprefixer
+// npx tailwindcss init -p
+```
+
+tailwind.config.js
+
+```js
+// set the all the styled pages & components routes
+
+module.exports = {
+	content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+	theme: {
+		//   set new custom global theme here /!\
+		extend: {
+			// or just add more properties here if we expect to use tailwind's default property theme ( colors...)
+			colors: {
+				newBlue: "#2d4258",
+			},
+			fontFamily: {
+				manrope: ["Manrope", "Verdana"],
+			},
+		},
+	},
+	plugins: [],
+};
+```
 
 styles/global.css
 
 ```css
+/* add tailwind style & set custom style */
+
+/* base < components < utilities  */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* base < components < utilities  */
-
 @layer base {
 	/* // generic default  */
+
+	body {
+		@apply font-manrope text-[15px] leading-[25px];
+	}
+
+	header,
+	main,
+	footer {
+		@apply mx-auto grid items-center;
+	}
+
 	h1 {
-		/* @apply text-blue-500... */
+		@apply font-bold text-[56px] leading-[58px] tracking-[2px];
 	}
 }
 
 @layer components {
 	/* components classes */
-	.card {
-		/* background-color: grey; */
+	/* override base layer */
+	.overline {
+		@apply font-normal text-[14px] leading-[19px] tracking-[10px];
+	}
+
+	.subTitle {
+		@apply font-bold text-[13px] leading-[25px] tracking-[1px];
+	}
+
+	.home-landing {
+		height: calc(100vh - 6rem);
 	}
 }
 
 @layer utilities {
-	/* components classes */
+	/* utilities classes */
 	.ultra {
 		/* for ultra specifics classes or properties not found in tailwind */
 		/* override others layers */
@@ -52,7 +107,10 @@ styles/global.css
 }
 ```
 
-using plugin in config file
+</details>
+
+<details>
+<summary>Plugins</summary>
 
 ```js
 const plugin = require("tailwindcss/plugin");
@@ -89,6 +147,10 @@ module.exports = {
 
 </details>
 
+</details>
+
+## Code
+
 <details>
 <summary>Object-postion</summary>
 
@@ -103,6 +165,17 @@ module.exports = {
 	/>
 </div>
 ```
+
+</details>
+
+<details>
+<summary>Svg to component</summary>
+
+https://react-svgr.com/playground/
+
+- import svg code to react-svgr
+- return to react components
+- set stroke, fill, opacity properties
 
 </details>
 

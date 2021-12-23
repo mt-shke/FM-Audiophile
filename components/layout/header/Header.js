@@ -1,15 +1,23 @@
 import Image from "next/image";
-import logo from "/public/assets/shared/logo.svg";
-import cart from "/public/assets/shared/icon-cart.svg";
-import Hamburger from "../../UI/icon/Hamburger";
+import logo from "/public/assets/shared/desktop/logo.svg";
+import cart from "/public/assets/shared/desktop/icon-cart.svg";
+import hamburger from "/public/assets/shared/desktop/icon-hamburger.svg";
+import NavBar from "../NavBar";
 
 const Header = (props) => {
 	return (
-		<header className="bg-black h-24 text-white border-b border-light-gray">
-			<div className="flex justify-between items-center p-4 ">
-				<Hamburger />
-				<Image objectFit="contain" src={logo} width="140" height="40" />
-				<Image objectFit="contain" src={cart} width="26" height="26" />
+		<header className="h-16">
+			<div className="flex justify-between w-full items-center px-6 sm:px-8 md:container ">
+				<span className="w-[16px] h-[16px] relative sm:hidden">
+					<Image className="sm:hidden" objectFit="contain" src={hamburger} width="24" height="24" />
+				</span>
+				<Image objectFit="contain" src={logo} width="90" height="16" />
+				<div className="hidden sm:gridc">
+					<NavBar />
+				</div>
+				<span className="w-[16px] h-[16px] relative">
+					<Image objectFit="contain" src={cart} layout="fill" />
+				</span>
 			</div>
 		</header>
 	);
