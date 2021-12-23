@@ -8,14 +8,16 @@ const Header = (props) => {
 	return (
 		<header className="h-16">
 			<div className="flex justify-between w-full items-center px-6 sm:px-8 md:container ">
-				<span className="w-[16px] h-[16px] relative sm:hidden">
+				<span className="w-[24px] h-[24px] relative sm:hidden">
 					<Image className="sm:hidden" objectFit="contain" src={hamburger} width="24" height="24" />
 				</span>
-				<Image objectFit="contain" src={logo} width="90" height="16" />
+				<span className="w-[110px] h-[40px] relative sm:w-[90px] sm:h-[16px]">
+					<Image objectFit="contain" src={logo} layout="fill" />
+				</span>
 				<div className="hidden sm:gridc">
 					<NavBar />
 				</div>
-				<span className="w-[16px] h-[16px] relative">
+				<span className="w-[24px] h-[24px] relative sm:w-[16px] sm:h-[16px]">
 					<Image objectFit="contain" src={cart} layout="fill" />
 				</span>
 			</div>
