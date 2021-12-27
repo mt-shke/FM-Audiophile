@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply bg-black text-white font-manrope text-[15px] leading-[25px] 2xl:container;
+		@apply bg-black text-white font-manrope text-[15px] leading-[25px];
 	}
 
 	main {
@@ -45,7 +45,8 @@
 }
 
 @layer components {
-	.overline {
+	/* font  */
+	.overl {
 		@apply font-normal text-[14px] leading-[19px] tracking-[10px];
 	}
 
@@ -53,9 +54,7 @@
 		@apply font-bold text-[13px] leading-[25px] tracking-[1px];
 	}
 
-	.home-landing {
-		height: calc(100vh - 4rem);
-	}
+	/* layout */
 
 	.gridc {
 		@apply grid place-items-center;
@@ -63,5 +62,23 @@
 
 	.flex-c6 {
 		@apply flex flex-col gap-6;
+	}
+	.home-landing {
+		height: calc(100vh - 4rem);
+		min-height: 32rem;
+	}
+
+	.ctn {
+		@apply max-w-[1440px] mx-auto;
+	}
+
+	/* icon */
+
+	.icon {
+		@apply w-[24px] h-[24px] relative;
+	}
+
+	.icon-logo {
+		@apply w-[110px] h-[24px] relative;
 	}
 }

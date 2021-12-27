@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const SectionIntro = (props) => {
 	return (
-		<section className="flex flex-col gap-10 p-6 my-20 relative items-start text-black rounded-lg">
-			<div className="w-full max-w-md h-72 relative">
+		<section className="ctn w-full px-6 flex flex-col gap-10 my-20 relative items-start text-black rounded-lg">
+			<span className="w-full aspect-square relative">
 				<Image className="rounded-lg" src="/assets/shared/mobile/image-best-gear.jpg" layout="fill" />
-			</div>
+			</span>
 			<div className="flex flex-col gap-6 items-center text-center">
 				<h2 className="text-3xl">
 					Bringing you the <strong className="text-s-orange">best</strong> audio gear

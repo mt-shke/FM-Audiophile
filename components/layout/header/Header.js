@@ -1,27 +1,22 @@
-import Image from "next/image";
-import logo from "/public/assets/shared/desktop/logo.svg";
+import Logo from "../../UI/icon/Logo";
 import cart from "/public/assets/shared/desktop/icon-cart.svg";
 import hamburger from "/public/assets/shared/desktop/icon-hamburger.svg";
 import NavBar from "../NavBar";
+import Icon from "../../UI/icon/Icon";
 
 const Header = (props) => {
 	return (
-		<header className="h-16">
-			<div className="flex justify-between w-full items-center px-6 sm:px-8 md:container ">
-				<span className="w-[24px] h-[24px] relative sm:hidden">
-					<Image className="sm:hidden" objectFit="contain" src={hamburger} width="24" height="24" />
-				</span>
-				<span className="w-[110px] h-[40px] relative sm:w-[90px] sm:h-[16px]">
-					<Image objectFit="contain" src={logo} layout="fill" />
-				</span>
+		<>
+			<header className="h-16 flex justify-between w-full items-center px-6 ctn">
+				<Icon css="sm:hidden" src={hamburger} alt="hamburger icon" />
+				<Logo />
 				<div className="hidden sm:gridc">
 					<NavBar />
 				</div>
-				<span className="w-[24px] h-[24px] relative sm:w-[16px] sm:h-[16px]">
-					<Image objectFit="contain" src={cart} layout="fill" />
-				</span>
-			</div>
-		</header>
+				<Icon src={cart} alt="cart icon" />
+			</header>
+			<hr className="max-w-[1392px] full-w mx-auto border-t border-soft-gray" />
+		</>
 	);
 };
 export default Header;

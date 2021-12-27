@@ -2,10 +2,10 @@ const Button = (props) => {
 	let style = "bg-orange hover:bg-s-orange text-white";
 
 	if (props.color === "black") {
-		style = "bg-black text-white";
+		style = "bg-black text-white hover:bg-b-gray";
 	}
 	if (props.color === "transparent") {
-		style = "text-black border-black border-2 ";
+		style = "text-black border-black border-2 hover:bg-black hover:text-white";
 	}
 
 	return (

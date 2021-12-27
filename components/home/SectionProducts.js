@@ -4,7 +4,7 @@ import SpeakerTop from "./sectionProducts/SpeakerTop";
 
 const SectionProdutcs = (props) => {
 	return (
-		<section className="flex flex-col gap-6 p-6">
+		<section className="ctn flex-c6 my-12 w-full px-6">
 			<SpeakerTop />
 			<SpeakerBottom />
 			<SectionEarphones />
