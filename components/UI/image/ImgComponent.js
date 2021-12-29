@@ -9,7 +9,7 @@ const ImgComponent = (props) => {
 	return (
 		<span className={`${widthFull} ${props.css ?? ""}`}>
 			<Image
-				className={props.icss}
+				className={props.icss ?? ""}
 				src={props.src}
 				objectFit={props.fit ?? "cover"}
 				layout="fill"

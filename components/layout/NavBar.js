@@ -3,24 +3,24 @@ import Link from "next/link";
 const NavBar = (props) => {
 	return (
 		<nav>
-			<ul className="flex flex-col uppercase gap-2 sm:gap-4 sm:flex-row sm:justify-end tracking-[1.4px]">
+			<ul className="flex flex-col gap-2 uppercase tracking-[1.4px] sm:flex-row sm:justify-end sm:text-base sm:gap-4 md:gap:6 md:text-lg lg:gap-12">
 				<li>
-					<Link href="#">
+					<Link href="/">
 						<a>Home</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="#">
+					<Link href="/headphones">
 						<a>Headphones</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="#">
+					<Link href="/speakers">
 						<a>Speakers</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="#">
+					<Link href="/earphones">
 						<a>Earphones</a>
 					</Link>
 				</li>

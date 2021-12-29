@@ -3,12 +3,19 @@ import ImgComponent from "../image/ImgComponent";
 
 const CategoryCard = (props) => {
 	return (
-		<article className="bg-gray relative flex flex-col items-center gap-4 mx-auto mt-20 pt-24 pb-6 w-full rounded-md">
-			<ImgComponent css="absolute w-48 h-48 -top-16" src={props.src} alt={props.alt ?? ""} />
-			<h6>{props.title}</h6>
-			<Link href={props.href}>
-				<a className="subTitle text-lg text-soft-gray">{`SHOP >`}</a>
-			</Link>
+		<article className="relative w-full gridc mx-auto bg-gray rounded-md">
+			<ImgComponent
+				css="relative h-40 md:h-60 aspect-square -top-20 md:-top-28"
+				fit="cover"
+				src={props.src}
+				alt={props.alt ?? ""}
+			/>
+			<div className="absolute flex flex-col gap-4 pt-12 md:pt-16 text-center items-center">
+				<h6>{props.title}</h6>
+				<Link href={props.href}>
+					<a className="subTitle text-lg text-para-gray">{`SHOP >`}</a>
+				</Link>
+			</div>
 		</article>
 	);
 };

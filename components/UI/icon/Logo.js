@@ -1,10 +1,15 @@
 import logo from "/public/assets/shared/desktop/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const Logo = (props) => {
 	return (
-		<span className={`icon-logo ${props.css ? props.css : ""}`}>
-			<Image objectFit="contain" src={logo} layout="fill" />
+		<span className={`icon-logo relative ${props.css ?? ""}`} onClick={props.onClick}>
+			<Link href="/">
+				<a>
+					<Image objectFit="contain" src={logo} layout="fill" />
+				</a>
+			</Link>
 		</span>
 	);
 };

@@ -10,7 +10,7 @@ module.exports = {
 			"light-gray": "#333333",
 			"m-gray": "#777777",
 			"b-gray": "#4c4c4c",
-			"soft-gray": "#7e7e7e",
+			"para-gray": "#7e7e7e",
 			white: "#FFFFFF",
 			"s-white": "#FAFAFA",
 			"s-orange": "#FBAF85",
@@ -35,7 +35,11 @@ module.exports = {
 				md: "0rem",
 			},
 		},
-		extend: {},
+		extend: {
+			fontSize: {
+				xs: ["12px", "18px"],
+			},
+		},
 	},
 	plugins: [],
 };

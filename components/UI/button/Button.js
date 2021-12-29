@@ -10,7 +10,8 @@ const Button = (props) => {
 
 	return (
 		<button
-			className={`${style} text-[14px] leading-[30px] tracking-[3px] uppercase font-bold py-2 px-6 w-fit`}
+			onClick={props.onClick}
+			className={`${style} text-[14px] leading-[30px] tracking-[3px] uppercase font-bold py-2 px-6 w-fit lg:py-4 lg:px-10`}
 		>
 			{props.children}
 		</button>

@@ -21,10 +21,12 @@
 	}
 
 	h1 {
-		@apply font-bold uppercase text-[56px] leading-[58px] tracking-[2px];
+		@apply md:font-bold md:uppercase md:text-[56px] md:leading-[58px] md:tracking-[2px]
+		font-bold uppercase text-[40px] leading-[44px] tracking-[1.5px];
 	}
 	h2 {
-		@apply font-bold uppercase text-[40px] leading-[44px] tracking-[1.5px];
+		@apply lg:font-bold lg:uppercase lg:text-[40px] lg:leading-[44px] lg:tracking-[1.5px]
+		font-bold uppercase text-[32px] leading-[36px] tracking-[1.15px];
 	}
 	h3 {
 		@apply font-bold uppercase text-[32px] leading-[36px] tracking-[1.15px];
@@ -75,10 +77,23 @@
 	/* icon */
 
 	.icon {
-		@apply w-[24px] h-[24px] relative;
+		@apply w-[24px] h-[24px] relative hover:cursor-pointer  md:w-[30px] md:h-[30px];
 	}
 
 	.icon-logo {
-		@apply w-[110px] h-[24px] relative;
+		@apply w-[110px] h-[24px] relative md:w-[160px] md:h-[40px] hover:cursor-pointer;
+	}
+}
+
+@layer utilities {
+	.noArr::-webkit-outer-spin-button,
+	.noArr::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		-moz-appearance: textfield;
+	}
+
+	.noArr {
+		-webkit-appearance: none;
+		-moz-appearance: textfield;
 	}
 }
