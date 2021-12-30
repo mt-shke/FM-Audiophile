@@ -7,7 +7,7 @@ const Logo = (props) => {
 		<span className={`icon-logo relative ${props.css ?? ""}`} onClick={props.onClick}>
 			<Link href="/">
 				<a>
-					<Image objectFit="contain" src={logo} layout="fill" />
+					<Image objectFit="contain" src={logo} layout="fill" alt="logo" />
 				</a>
 			</Link>
 		</span>
