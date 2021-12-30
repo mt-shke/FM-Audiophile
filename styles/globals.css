@@ -7,17 +7,18 @@
 		@apply bg-black text-white font-manrope text-[15px] leading-[25px];
 	}
 
-	main {
-		@apply bg-white text-black;
-	}
-
 	header,
 	main,
 	footer {
-		@apply mx-auto grid items-center;
+		@apply mx-auto grid grid-flow-row items-center;
 	}
 
-	section {
+	main {
+		@apply bg-white text-black gap-16 pb-24 sm:gap-28 sm:pb-32 md:gap-44 md:pb-44;
+	}
+
+	main > section {
+		@apply ctn w-full relative px-6;
 	}
 
 	h1 {
@@ -48,7 +49,7 @@
 
 @layer components {
 	/* font  */
-	.overl {
+	.over-style {
 		@apply font-normal text-[14px] leading-[19px] tracking-[10px];
 	}
 

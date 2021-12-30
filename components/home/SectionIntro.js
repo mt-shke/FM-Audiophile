@@ -4,13 +4,13 @@ import ImgComponent from "../UI/image/ImgComponent";
 
 const SectionIntro = (props) => {
 	return (
-		<section className="ctn relative flex flex-col-reverse gap-10 px-6 my-20 items-start text-black rounded-lg sm:grid-cols-2 sm:grid sm:my-40">
-			<div className="flex-c6 h-full items-center text-center sm:justify-center sm:text-left sm:items-start sm:pr-0 md:gap-10 md:pr-8 lg:pr-24">
+		<section className="flex flex-col-reverse items-start gap-10 text-black rounded-lg sm:grid-cols-2 sm:grid">
+			<div className="h-full flex-c6 items-center text-center sm:justify-center sm:text-left sm:items-start sm:pr-0 md:gap-10 md:pr-8 lg:pr-24">
 				<h1>
 					Bringing you the <strong className="text-s-orange">best</strong> audio gear
 				</h1>
 
-				<p className="text-para-gray text-base sm:text-base md:text-xl">
+				<p className="text-para-gray sm:text-base md:text-xl">
 					Located at the heart of New York City, Audiophile is the premier store for high end headphones,
 					earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms
 					available for you to browse and experience a wide range of our products. Stop by our store to meet
@@ -19,14 +19,14 @@ const SectionIntro = (props) => {
 				</p>
 			</div>
 			<ImgComponent
-				css="w-full aspect-[654/600] relative sm:hidden"
+				css="relative w-full aspect-[654/600] sm:hidden"
 				icss="w-full rounded-lg"
 				fit="cover"
 				src={img}
 				alt="audiophile headphones"
 			/>
 			<ImgComponent
-				css="aspect-[540/588] relative hidden sm:flex items-center w-full h-full"
+				css="hidden relative w-full h-full aspect-[540/588] sm:flex sm:items-center"
 				icss="rounded-lg"
 				fit="cover"
 				src={imgDesktop}

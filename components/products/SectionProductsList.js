@@ -5,7 +5,7 @@ const SectionProductsList = (props) => {
 	const sorted = [...newFirst];
 
 	return (
-		<section className="ctn flex flex-col gap-16 px-6 py-10 md:gap-28 md:py-32">
+		<section className="flex flex-col gap-16 md:gap-28">
 			{sorted.map((item, index) => (
 				<ProductCard item={item} key={item.name} index={index} />
 			))}

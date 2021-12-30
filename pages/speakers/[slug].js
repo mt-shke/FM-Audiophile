@@ -1,5 +1,5 @@
 import Head from "next/head";
-import SectionProductDetails from "../../components/products/SectionProductDetails";
+import SectionProductDetails from "../../components/products/productDetails/SectionProductDetails";
 import data from "/data.json";
 
 const ProductDetailsPage = (props) => {

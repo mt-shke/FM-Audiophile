@@ -34,7 +34,7 @@ const ProductCard = (props) => {
                 ${pair ? "order-1 md:pl-8 lg:pl-24" : "md:pr-8 lg:pr-24"}
             `}
 			>
-				{item.new && <span className="overl uppercase text-orange">New product</span>}
+				{item.new && <span className="over-style uppercase text-orange">New product</span>}
 				<h2 className="px-6 md:px-0">{item.name}</h2>
 				<p className="text-para-gray">{item.description}</p>
 				<Button onClick={buttonHandler}>see product</Button>

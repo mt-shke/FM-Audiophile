@@ -7,7 +7,7 @@ const Home = () => {
 	return (
 		<>
 			<SectionHomeLanding />
-			<SectionCategoriesMenu css="mt-16 mb-8" />
+			<SectionCategoriesMenu css="mt-20" />
 			<SectionProdutcs />
 			<SectionIntro />
 		</>

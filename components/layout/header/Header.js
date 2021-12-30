@@ -27,7 +27,7 @@ const Header = (props) => {
 			<hr className="full-w max-w-[1392px] mx-auto border-t border-para-gray" />
 			{menu && (
 				<div className="absolute z-40 w-full" onClick={menuHandler}>
-					<SectionCategoriesMenu css="absolute z-50 border-b bg-white text-black py-6 rounded-b-lg" />
+					<SectionCategoriesMenu css="absolute z-50 pt-28 pb-8 bg-white text-black border-b rounded-b-lg" />
 					<Background css="fixed z-40 inset-0 bg-black opacity-70 " />
 				</div>
 			)}

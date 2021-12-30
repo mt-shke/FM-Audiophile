@@ -15,7 +15,7 @@ const SectionSpeakerTop = (props) => {
 					src={speakerDesktop}
 					alt="speaker-zx9"
 				/>
-				<ImgComponent css="absolute w-full aspect-square" src={circles} alt="circles design" />
+				<ImgComponent css="relative w-full aspect-square" src={circles} alt="circles design" />
 			</div>
 			<div className="relative z-20 flex flex-col items-center gap-4 px-6 text-center md:items-start md:text-left md:px-20 md:gap-10">
 				<h2 className="text-white">zx9 speaker</h2>
