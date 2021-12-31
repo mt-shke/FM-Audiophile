@@ -1,12 +1,12 @@
-import Button from "../../UI/button/Button";
 import ImgComponent from "../../UI/image/ImgComponent";
+import ProductButtons from "./productDescription/ProductButtons";
 
 const ProductDescription = (props) => {
 	const { image, name, description, price } = props.item;
 	const isNew = props.item.new;
 
 	return (
-		<article className="flex-c6">
+		<article className="flex-c6 sm:gap-10 md:grid md:grid-cols-2 md:gap-16 md:text-xs lg:gap-32 lg:text-base xl:text-2xl">
 			<ImgComponent
 				css="relative block w-full aspect-square"
 				icss="rounded-lg"
@@ -14,23 +14,14 @@ const ProductDescription = (props) => {
 				src={image.mobile}
 				alt={name}
 			/>
-			<div className="flex-c6">
-				{isNew && <span className="over-style uppercase text-orange">New product</span>}
-				<h2>{name}</h2>
-				<p className="text-para-gray">{description}</p>
-				<span className="font-bold">$ {price}</span>
-			</div>
-			<div className="flex flex-row items-center gap-4">
-				<div className="h-full flex flex-row p-2 bg-gray text-orange">
-					<span>-</span>
-					<input
-						className="noArr w-16 px-2 text-black text-center font-bold bg-gray outline-none"
-						defaultValue="1"
-						type="number"
-					/>
-					<span>+</span>
+			<div className="flex-c6 md:justify-center lg:gap-10">
+				<div className="flex-c6 md:gap-4 lg:gap-8">
+					{isNew && <span className="over-style uppercase text-orange">New product</span>}
+					<h2 className="overflow-visible w-3/4">{name}</h2>
+					<p className="text-para-gray">{description}</p>
+					<span className="font-bold">$ {price}</span>
 				</div>
-				<Button>add to cart</Button>
+				<ProductButtons item={props.item} />
 			</div>
 		</article>
 	);

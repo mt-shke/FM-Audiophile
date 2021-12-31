@@ -1,6 +1,9 @@
+import "../styles/globals.css";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
-import "../styles/globals.css";
+import configureCartStore from "../components/store/cart-store";
+
+configureCartStore();
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -15,6 +18,7 @@ function MyApp({ Component, pageProps }) {
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 				<link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet" />
 			</Head>
+
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>

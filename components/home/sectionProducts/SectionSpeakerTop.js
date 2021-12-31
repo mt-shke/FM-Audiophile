@@ -8,9 +8,9 @@ const SectionSpeakerTop = (props) => {
 	return (
 		<section className="relative flex flex-col gap-10 items-center overflow-hidden py-12 bg-orange rounded-lg md:grid md:grid-cols-2">
 			<div className="relative z-10 w-full gridc">
-				<ImgComponent css="h-56 w-48 relative z-20 md:hidden" fit="contain" src={speaker} alt="speaker-zx9" />
+				<ImgComponent css="h-56 w-48 absolute z-20 md:hidden" fit="contain" src={speaker} alt="speaker-zx9" />
 				<ImgComponent
-					css="hidden relative w-[300px] lg:w-[400px] -bottom-16 aspect-[756/918] md:block z-20"
+					css="hidden absolute w-[300px] lg:w-[400px] -bottom-20 aspect-[3/4] md:block z-20"
 					fit="contain"
 					src={speakerDesktop}
 					alt="speaker-zx9"

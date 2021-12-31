@@ -13,13 +13,13 @@ const SectionSpeakerBottom = (props) => {
 				</Button>
 			</div>
 			<ImgComponent
-				css="block w-full aspect-[654/640] sm:hidden "
+				css="block w-full aspect-square sm:hidden "
 				icss="rounded-lg"
 				fit="initial"
 				src={speaker}
 			/>
 			<ImgComponent
-				css="hidden w-full aspect-[1110/320] sm:block "
+				css="hidden w-full aspect-[15/4] sm:block "
 				fit="initial"
 				icss="rounded-lg"
 				src={speakerDesktop}

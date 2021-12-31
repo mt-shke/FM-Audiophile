@@ -7,7 +7,7 @@ const ImgComponent = (props) => {
 	}
 
 	return (
-		<span className={`${widthFull} ${props.css ?? ""}`}>
+		<div className={`${widthFull} ${props.css ?? ""}`}>
 			<Image
 				className={props.icss ?? ""}
 				src={props.src}
@@ -15,7 +15,7 @@ const ImgComponent = (props) => {
 				layout="fill"
 				alt={props.alt ?? ""}
 			/>
-		</span>
+		</div>
 	);
 };
 export default ImgComponent;

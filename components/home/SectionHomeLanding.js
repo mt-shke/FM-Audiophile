@@ -3,8 +3,13 @@ import ImgComponent from "../UI/image/ImgComponent";
 import imgMobile from "/public/assets/home/mobile/image-header.jpg";
 import imgDesktop from "/public/assets/home/desktop/image-hero.jpg";
 import Background from "../UI/background/Background";
+import data from "/data.json";
+import Link from "next/link";
 
 const SectionHomeLanding = (props) => {
+	const item = data.find((item) => item.name.includes("XX99 Mark II Headphones"));
+	const slug = `/${item.category}/${item.slug}`;
+
 	return (
 		<div className="relative w-full flex items-center bg-black">
 			<section className="ctn home-landing relative w-full flex items-center">
@@ -19,7 +24,11 @@ const SectionHomeLanding = (props) => {
 						Experience natural, lifelike audio and exceptional build quality made for the passionate music
 						enthusiast.
 					</p>
-					<Button>see product</Button>
+					<Link href={slug}>
+						<a>
+							<Button>see product</Button>
+						</a>
+					</Link>
 				</article>
 			</section>
 		</div>

@@ -152,7 +152,7 @@ module.exports = {
 ## Code
 
 <details>
-<summary>Object-postion</summary>
+<summary>Object-position</summary>
 
 ```js
 <div>
@@ -176,6 +176,29 @@ https://react-svgr.com/playground/
 - import svg code to react-svgr
 - return to react components
 - set stroke, fill, opacity properties
+
+</details>
+
+<details>
+<summary>Grid with tailwind</summary>
+
+<!-- parent -->
+
+- set a width & height
+- number of cols/rows => grid-cols-3 grid-rows-5
+- or set to auto => grid-flow-cols or grid-flow-rows
+
+<!-- children  -->
+
+- set the line where children starts => col-start-1, row-start-3
+- set the line where it ends => col-end-4 /!\ last line = numberOfCols + 1
+- set its size => col-span-3
+
+```js
+<div className="w-full grid grid-cols-6 gap-6 grid-flow-rows h-[500px] lg:h-[600px]">
+	<img className="col-start-3 col-end-7 row-start-1 row-end-3 w-full md:h-auto relative" src={image} />
+</div>
+```
 
 </details>
 

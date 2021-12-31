@@ -75,6 +75,10 @@
 		@apply max-w-[1440px] mx-auto;
 	}
 
+	.cart {
+		width: calc(100vw - 3rem);
+	}
+
 	/* icon */
 
 	.icon {
@@ -87,13 +91,13 @@
 }
 
 @layer utilities {
-	.noArr::-webkit-outer-spin-button,
-	.noArr::-webkit-inner-spin-button {
+	.noArrows::-webkit-outer-spin-button,
+	.noArrows::-webkit-inner-spin-button {
 		-webkit-appearance: none;
 		-moz-appearance: textfield;
 	}
 
-	.noArr {
+	.noArrows {
 		-webkit-appearance: none;
 		-moz-appearance: textfield;
 	}

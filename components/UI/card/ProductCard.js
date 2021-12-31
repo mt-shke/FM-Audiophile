@@ -1,20 +1,16 @@
 import ImgComponent from "../image/ImgComponent";
 import Button from "../../UI/button/Button";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 const ProductCard = (props) => {
-	const router = useRouter();
 	const item = props.item;
 	const pair = props.index % 2 === 0;
-
-	const buttonHandler = () => {
-		router.push(`/${item.category}/${item.slug}`);
-	};
+	const slug = `/${item.category}/${item.slug}`;
 
 	return (
 		<article className="overflow-hidden grid grid-rows-2 gap-6 md:gap-12 md:grid-cols-2 md:grid-rows-1">
 			<ImgComponent
-				css="relative w-full aspect-[1/1] md:hidden"
+				css="relative w-full aspect-square md:hidden"
 				icss="rounded-lg"
 				fit="cover"
 				src={item.image.mobile}
@@ -22,7 +18,7 @@ const ProductCard = (props) => {
 			/>
 			<ImgComponent
 				css={`
-					${!pair ? "order-2" : ""} hidden relative w-full max-w- aspect-[1/1] md:block
+					${!pair ? "order-2" : ""} hidden relative w-full max-w- aspect-square md:block
 				`}
 				icss="rounded-lg"
 				fit="cover"
@@ -37,7 +33,11 @@ const ProductCard = (props) => {
 				{item.new && <span className="over-style uppercase text-orange">New product</span>}
 				<h2 className="px-6 md:px-0">{item.name}</h2>
 				<p className="text-para-gray">{item.description}</p>
-				<Button onClick={buttonHandler}>see product</Button>
+				<Link href={slug}>
+					<a>
+						<Button>see product</Button>
+					</a>
+				</Link>
 			</div>
 		</article>
 	);
