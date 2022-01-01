@@ -9,46 +9,40 @@ import Background from "../../UI/background/Background";
 import CartModal from "../../cart/CartModal";
 
 const Header = (props) => {
-	const [modal, setModal] = useState(false);
 	const [menu, setMenu] = useState(false);
 	const [cart, setCart] = useState(false);
 
 	const menuHandler = () => {
-		setModal((o) => !o);
 		setMenu((o) => !o);
 	};
 
 	const cartHandler = () => {
-		setModal((o) => !o);
 		setCart((o) => !o);
 	};
 
 	const modalHandler = () => {
 		if (menu) setMenu(false);
 		if (cart) setCart(false);
-		setModal(false);
 	};
 
 	return (
 		<>
 			<header className="ctn h-16 w-full relative z-50 flex justify-between items-center px-6 sm:h-28">
-				<Icon onClick={menuHandler} css="sm:hidden" src={hamburgerIcon} alt="hamburger icon" />
+				<Icon onClick={menuHandler} className="sm:hidden" src={hamburgerIcon} alt="hamburger icon" />
 				<Logo />
-				<div className="hidden sm:gridc">
-					<NavBar />
-				</div>
+				<NavBar className="hidden sm:gridc" />
 				<Icon onClick={cartHandler} src={cartIcon} alt="cart icon" />
 				{cart && <CartModal />}
 			</header>
 			<hr className="full-w max-w-[1392px] mx-auto border-t border-para-gray" />
 			{menu && (
 				<div className="relative z-40 w-full" onClick={menuHandler}>
-					<SectionCategoriesMenu css="absolute pt-28 pb-8 bg-white text-black border-b rounded-b-lg" />
+					<SectionCategoriesMenu className="absolute pt-28 pb-8 bg-white text-black border-b rounded-b-lg" />
 				</div>
 			)}
 
 			{(menu || cart) && (
-				<Background onClick={modalHandler} css="fixed z-[39] inset-0 bg-black opacity-70 " />
+				<Background onClick={modalHandler} className="fixed z-[39] inset-0 bg-black opacity-70 " />
 			)}
 		</>
 	);

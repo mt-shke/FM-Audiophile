@@ -8,8 +8,8 @@ const ProductDescription = (props) => {
 	return (
 		<article className="flex-c6 sm:gap-10 md:grid md:grid-cols-2 md:gap-16 md:text-xs lg:gap-32 lg:text-base xl:text-2xl">
 			<ImgComponent
-				css="relative block w-full aspect-square"
-				icss="rounded-lg"
+				className="relative block w-full aspect-square"
+				iclassName="rounded-lg"
 				fit="cover"
 				src={image.mobile}
 				alt={name}

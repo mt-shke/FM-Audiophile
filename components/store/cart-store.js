@@ -2,23 +2,38 @@ import { initStore } from "./store";
 
 const configureCartStore = () => {
 	const actions = {
-		ADD_PRODUCT_TO_CART: (curState, item) => {
+		ADD_PRODUCT_TO_CART: (curState, payload) => {
 			let newItems = [];
-			const itemIndex = curState.cart.items.findIndex((it) => it.id === item.id);
+			const itemIndex = curState.cart.items.findIndex((item) => item.name === payload.name);
 			if (itemIndex < 0) {
-				newItems.push(item);
+				newItems = [...curState.cart.items];
+				newItems.push(payload);
 			}
 			if (itemIndex >= 0) {
 				newItems = [...curState.cart.items];
-				newItems[itemIndex].quantity += item.quantity;
+				newItems[itemIndex].quantity += payload.quantity;
 			}
-
 			const newCart = { ...curState.cart, items: newItems };
 			return { cart: newCart };
 		},
 
-		DELETE_PRODUCT_FROM_CART: (curState, item) => {
-			const newItems = curState.cart.items.filter((it) => it.id !== item.id);
+		UPDATE_QUANTITY_IN_CART: (curState, payload) => {
+			let newItems = [];
+			const itemIndex = curState.cart.items.findIndex((item) => item.name === payload.name);
+			newItems = [...curState.cart.items];
+			newItems[itemIndex].quantity = payload.quantity;
+			const newCart = { ...curState.cart, items: newItems };
+			return { cart: newCart };
+		},
+
+		REMOVE_PRODUCT_FROM_CART: (curState, payload) => {
+			let newItems = curState.cart.items.filter((item) => item.name !== payload.name);
+			const newCart = { ...curState.cart, items: newItems };
+			return { cart: newCart };
+		},
+
+		REMOVE_ALL_PRODUCT_FROM_CART: (curState) => {
+			const newItems = [];
 			const newCart = { ...curState.cart, items: newItems };
 			return { cart: newCart };
 		},
@@ -26,7 +41,6 @@ const configureCartStore = () => {
 
 	initStore(actions, {
 		cart: {
-			total: 0,
 			items: [],
 		},
 	});

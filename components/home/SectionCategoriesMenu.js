@@ -6,7 +6,9 @@ import earphones from "/public/assets/shared/desktop/image-category-thumbnail-ea
 const SectionCategoriesMenu = (props) => {
 	return (
 		<section
-			className={`${props.css ?? "mt-20"} w-full flex flex-col px-6 gap-32 sm:flex-row sm:gap-6 lg:gap-8`}
+			className={`${
+				props.className ?? "mt-20"
+			} w-full flex flex-col px-6 gap-32 sm:flex-row sm:gap-6 lg:gap-8`}
 		>
 			<CategoryCard src={headphones} href="/headphones" title="headphones" alt="headphones" />
 			<CategoryCard src={speakers} href="/speakers" title="speakers" alt="speakers" />

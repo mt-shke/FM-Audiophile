@@ -5,7 +5,7 @@ const CategoryCard = (props) => {
 	return (
 		<article className="relative w-full gridc mx-auto bg-gray rounded-md">
 			<ImgComponent
-				css="relative h-40 md:h-60 aspect-square -top-20 md:-top-28"
+				className="relative h-40 md:h-60 aspect-square -top-20 md:-top-28"
 				fit="cover"
 				src={props.src}
 				alt={props.alt ?? ""}

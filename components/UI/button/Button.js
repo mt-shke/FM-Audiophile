@@ -12,7 +12,7 @@ const Button = (props) => {
 		<button
 			onClick={props.onClick}
 			className={`${
-				props.css ?? "w-fit"
+				props.className ?? "w-fit"
 			} ${style} text-[14px] leading-[30px] tracking-[3px] uppercase font-bold py-2 px-6 lg:py-4 lg:px-10`}
 		>
 			{props.children}

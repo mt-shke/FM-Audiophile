@@ -19,15 +19,15 @@ const SectionIntro = (props) => {
 				</p>
 			</div>
 			<ImgComponent
-				css="relative w-full aspect-sqaure sm:hidden"
-				icss="w-full rounded-lg"
+				className="relative w-full aspect-square sm:hidden"
+				iclassName="w-full rounded-lg"
 				fit="cover"
 				src={img}
 				alt="audiophile headphones"
 			/>
 			<ImgComponent
-				css="hidden relative w-full h-full aspect-square sm:flex sm:items-center"
-				icss="rounded-lg"
+				className="hidden relative w-full h-full aspect-square sm:flex sm:items-center"
+				iclassName="rounded-lg"
 				fit="cover"
 				src={imgDesktop}
 				alt="audiophile headphones"

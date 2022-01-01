@@ -10,17 +10,17 @@ const ProductCard = (props) => {
 	return (
 		<article className="overflow-hidden grid grid-rows-2 gap-6 md:gap-12 md:grid-cols-2 md:grid-rows-1">
 			<ImgComponent
-				css="relative w-full aspect-square md:hidden"
-				icss="rounded-lg"
+				className="relative w-full aspect-square md:hidden"
+				iclassName="rounded-lg"
 				fit="cover"
 				src={item.image.mobile}
 				alt={item.name}
 			/>
 			<ImgComponent
-				css={`
+				className={`
 					${!pair ? "order-2" : ""} hidden relative w-full max-w- aspect-square md:block
 				`}
-				icss="rounded-lg"
+				iclassName="rounded-lg"
 				fit="cover"
 				src={item.image.desktop}
 				alt={item.name}
