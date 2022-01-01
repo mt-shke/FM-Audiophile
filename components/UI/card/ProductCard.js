@@ -11,7 +11,7 @@ const ProductCard = (props) => {
 		<article className="overflow-hidden grid grid-rows-2 gap-6 md:gap-12 md:grid-cols-2 md:grid-rows-1">
 			<ImgComponent
 				className="relative w-full aspect-square md:hidden"
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				fit="cover"
 				src={item.image.mobile}
 				alt={item.name}
@@ -20,7 +20,7 @@ const ProductCard = (props) => {
 				className={`
 					${!pair ? "order-2" : ""} hidden relative w-full max-w- aspect-square md:block
 				`}
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				fit="cover"
 				src={item.image.desktop}
 				alt={item.name}

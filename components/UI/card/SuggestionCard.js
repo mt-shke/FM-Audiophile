@@ -10,7 +10,7 @@ const SuggestionCard = (props) => {
 					className="w-full block relative aspect-[7/3] bg-gray rounded-lg sm:aspect-square"
 					src={props.src.mobile ?? ""}
 					alt={props.alt ?? ""}
-					iclassName="rounded-lg"
+					icss="rounded-lg"
 				/>
 				<h5>{props.name ?? ""}</h5>
 				<Link href={props.slug}>
@@ -24,7 +24,7 @@ const SuggestionCard = (props) => {
 					className="w-full block relative aspect-[7/3] bg-gray rounded-lg sm:aspect-square"
 					src={props.src.desktop ?? ""}
 					alt={props.alt ?? ""}
-					iclassName="rounded-lg"
+					icss="rounded-lg"
 				/>
 				<h5>{props.name ?? ""}</h5>
 				<Link href={props.slug}>

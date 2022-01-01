@@ -19,14 +19,14 @@ const SectionSpeakerBottom = (props) => {
 			</div>
 			<ImgComponent
 				className="block w-full aspect-square sm:hidden "
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				fit="initial"
 				src={speaker}
 			/>
 			<ImgComponent
 				className="hidden w-full aspect-[15/4] sm:block "
 				fit="initial"
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				src={speakerDesktop}
 			/>
 		</section>

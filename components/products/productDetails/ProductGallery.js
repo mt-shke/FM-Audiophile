@@ -11,7 +11,7 @@ const ProductGallery = (props) => {
 						className={`
 							${index === 2 ? "h-64 sm:h-72" : "h-40 sm:h-52"} w-full md:h-auto relative
 						`}
-						iclassName="rounded-lg"
+						icss="rounded-lg"
 						fit="cover"
 						src={item.mobile}
 						alt={name}
@@ -29,7 +29,7 @@ const ProductGallery = (props) => {
 									: "h-40 md:col-start-1 md:col-end-3"
 							} w-full md:h-auto relative
 						`}
-						iclassName="rounded-lg"
+						icss="rounded-lg"
 						fit="cover"
 						src={item.desktop}
 						alt={name}

@@ -8,7 +8,7 @@ const SectionEarphones = (props) => {
 		<section className="relative flex-c6 justify-between text-black rounded-lg sm:grid grid-cols-2 sm:gap-10">
 			<ImgComponent
 				className="block relative w-full aspect-[14/9]"
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				src={img}
 				alt="earphones"
 			/>

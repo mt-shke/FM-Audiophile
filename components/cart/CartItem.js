@@ -10,7 +10,7 @@ const CartItem = (props) => {
 		<li className="flex flex-row gap-3 items-center text-sm" key={shortenedName}>
 			<ImgComponent
 				className="relative w-fit block h-16 aspect-square"
-				iclassName="rounded-lg"
+				icss="rounded-lg"
 				src={image.mobile}
 				alt={name}
 			/>
