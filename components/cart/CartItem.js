@@ -3,7 +3,7 @@ import { shortenName } from "../utils/formValidation";
 import CartItemButtons from "./CartItemButtons";
 
 const CartItem = (props) => {
-	const { name, price, image } = props.item;
+	const { name, price, image, quantity } = props.item;
 	const shortenedName = shortenName(name);
 
 	return (
@@ -18,7 +18,8 @@ const CartItem = (props) => {
 				<span>{shortenedName}</span>
 				<span className="text-para-gray">$ {price}</span>
 			</div>
-			<CartItemButtons item={props.item} deleteItem={props.deleteItem} />
+			{!props.checkout && <CartItemButtons item={props.item} deleteItem={props.deleteItem ?? ""} />}
+			{props.checkout && <span className="ml-auto mr-0 font-bold text-para-gray">x{quantity}</span>}
 		</li>
 	);
 };

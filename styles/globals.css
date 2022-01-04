@@ -14,7 +14,7 @@
 	}
 
 	main {
-		@apply bg-white text-black gap-16 pb-24 sm:gap-28 sm:pb-32 md:gap-44 md:pb-44;
+		@apply bg-white text-black gap-16 sm:gap-28 md:gap-44;
 	}
 
 	main > section {

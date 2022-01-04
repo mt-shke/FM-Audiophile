@@ -14,6 +14,7 @@ const ImgComponent = (props) => {
 				objectFit={props.fit ?? "cover"}
 				layout="fill"
 				alt={props.alt ?? ""}
+				priority={props.priority ?? "false"}
 			/>
 		</div>
 	);

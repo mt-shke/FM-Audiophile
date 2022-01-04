@@ -13,6 +13,7 @@ const ProductDescription = (props) => {
 				fit="cover"
 				src={image.mobile}
 				alt={name}
+				priority="true"
 			/>
 			<div className="flex-c6 md:justify-center lg:gap-10">
 				<div className="flex-c6 md:gap-4 lg:gap-8">

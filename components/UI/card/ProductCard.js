@@ -6,6 +6,7 @@ const ProductCard = (props) => {
 	const item = props.item;
 	const pair = props.index % 2 === 0;
 	const slug = `/${item.category}/${item.slug}`;
+	const priority = props.index === 0;
 
 	return (
 		<article className="overflow-hidden grid grid-rows-2 gap-6 md:gap-12 md:grid-cols-2 md:grid-rows-1">
@@ -15,6 +16,7 @@ const ProductCard = (props) => {
 				fit="cover"
 				src={item.image.mobile}
 				alt={item.name}
+				priority={priority ?? false}
 			/>
 			<ImgComponent
 				className={`
@@ -24,6 +26,7 @@ const ProductCard = (props) => {
 				fit="cover"
 				src={item.image.desktop}
 				alt={item.name}
+				priority={priority ?? false}
 			/>
 			<div
 				className={`flex flex-col gap-4 justify-center items-center text-center md:text-left md:items-start lg:gap-10 lg:text-lg xl:gap-14 xl:text-2xl

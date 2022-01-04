@@ -2,13 +2,13 @@ import Button from "../UI/button/Button";
 import { useStore } from "../store/store";
 import { useState } from "react";
 import CartItem from "./CartItem";
+import Link from "next/link";
 
 const CartModal = (props) => {
 	const store = useStore()[0];
 	const dispatch = useStore()[1];
 	const [itemsInCart, setItemsInCart] = useState(store.cart.items);
 	const price = itemsInCart?.reduce((a, b) => a + b.quantity * b.price, 0);
-
 	const isNotEmpty = itemsInCart.length >= 1 ? <span>{`(${itemsInCart.length})`}</span> : "";
 
 	const removeAllHandler = () => {
@@ -36,16 +36,21 @@ const CartModal = (props) => {
 				)}
 			</div>
 			<ul className="flex-c6 relative w-full">
-				{itemsInCart.map((item) => (
-					<CartItem item={item} key={item.name} deleteItem={deleteItemHandler} />
-				))}
+				{isNotEmpty &&
+					itemsInCart.map((item) => <CartItem item={item} key={item.name} deleteItem={deleteItemHandler} />)}
 				{!isNotEmpty && <li className="font-bold text-para-gray">Your cart is empty</li>}
 			</ul>
 			<div className="flex justify-between items-baseline font-bold">
 				<span className="text-para-gray">TOTAL</span>
 				<span>$ {price}</span>
 			</div>
-			<Button className="w-full">checkout</Button>
+			<Link href="/checkout">
+				<a>
+					<Button className="w-full" onClick={props.closeCart}>
+						checkout
+					</Button>
+				</a>
+			</Link>
 		</div>
 	);
 };

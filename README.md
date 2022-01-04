@@ -147,6 +147,29 @@ module.exports = {
 
 </details>
 
+<details>
+<summary>Grid with tailwind</summary>
+
+<!-- parent -->
+
+- set a width & height
+- number of cols/rows => grid-cols-3 grid-rows-5
+- or set to auto => grid-flow-cols or grid-flow-rows
+
+<!-- children  -->
+
+- set the line where children starts => col-start-1, row-start-3
+- set the line where it ends => col-end-4 /!\ last line = numberOfCols + 1
+- set its size => col-span-3
+
+```js
+<div className="w-full grid grid-cols-6 gap-6 grid-flow-rows h-[500px] lg:h-[600px]">
+	<img className="col-start-3 col-end-7 row-start-1 row-end-3 w-full md:h-auto relative" src={image} />
+</div>
+```
+
+</details>
+
 </details>
 
 ## Code
@@ -180,24 +203,23 @@ https://react-svgr.com/playground/
 </details>
 
 <details>
-<summary>Grid with tailwind</summary>
-
-<!-- parent -->
-
-- set a width & height
-- number of cols/rows => grid-cols-3 grid-rows-5
-- or set to auto => grid-flow-cols or grid-flow-rows
-
-<!-- children  -->
-
-- set the line where children starts => col-start-1, row-start-3
-- set the line where it ends => col-end-4 /!\ last line = numberOfCols + 1
-- set its size => col-span-3
+<summary>Data</summary>
 
 ```js
-<div className="w-full grid grid-cols-6 gap-6 grid-flow-rows h-[500px] lg:h-[600px]">
-	<img className="col-start-3 col-end-7 row-start-1 row-end-3 w-full md:h-auto relative" src={image} />
-</div>
+// const data = { 1: "one", b: "cdef", fruit: "apple", plant: "sunflower" };
+
+// Object.values(data)  => return the values of an object, as a values array
+// => ['one', 'cdef', 'apple', 'sunflower']
+
+// Object.entries(data) => return the values of an object as pair values
+// => [['1', 'one'], ['b', 'cdef'], ['fruit', 'apple'], ['plant', 'sunflower']];
+// 0: (2) ['1', 'one']
+// 1: (2) ['b', 'cdef']
+// 2: (2) ['fruit', 'apple']
+// 3: (2) ['plant', 'sunflower']
+
+// Object.fromEntries(Object.entries(data)) => return an array of 2 values/pair values [first, second] as an object {first: second}
+// => {1: 'one', b: 'cdef', fruit: 'apple', plant: 'sunflower'}
 ```
 
 </details>

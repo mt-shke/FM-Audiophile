@@ -4,7 +4,7 @@ import ImgComponent from "../UI/image/ImgComponent";
 
 const SectionIntro = (props) => {
 	return (
-		<section className="flex flex-col-reverse items-start gap-10 text-black rounded-lg sm:grid-cols-2 sm:grid">
+		<section className="flex flex-col-reverse items-start gap-10 pb-24  text-black rounded-lg sm:grid sm:grid-cols-2 sm:pb-32 md:pb-44">
 			<div className="h-full flex-c6 items-center text-center sm:justify-center sm:text-left sm:items-start sm:pr-0 md:gap-10 md:pr-8 lg:pr-24">
 				<h1>
 					Bringing you the <strong className="text-s-orange">best</strong> audio gear

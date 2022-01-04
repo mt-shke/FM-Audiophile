@@ -19,14 +19,14 @@ const ProductButtons = (props) => {
 		const plus = e.target.classList.contains("plus");
 		const minus = e.target.classList.contains("minus");
 		if (plus) {
-			setQuantity((previous) => +previous + 1);
+			setQuantity((previous) => (+previous >= 999 ? 999 : +previous + 1));
 			return;
 		}
 		if (minus) {
-			setQuantity((previous) => (previous === 0 ? 0 : +previous - 1));
+			setQuantity((previous) => (+previous === 0 ? 0 : +previous - 1));
 			return;
 		}
-		setQuantity(enteredValue);
+		setQuantity(+enteredValue >= 999 ? 999 : +enteredValue <= 0 ? 0 : +enteredValue);
 	};
 
 	const checkValue = () => {
@@ -43,6 +43,7 @@ const ProductButtons = (props) => {
 					className="noArrows w-16 px-2 text-black text-center font-bold bg-gray outline-none "
 					type="number"
 					min="0"
+					max="999"
 					value={quantity}
 					onChange={valueHandler}
 					onBlur={checkValue}

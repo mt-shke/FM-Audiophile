@@ -14,3 +14,10 @@ export const shortenName = (productName) => {
 		.replace("SPEAKER", "")
 		.trim();
 };
+
+export const validateEmail = (input) => {
+	return input.trim() !== "";
+};
+export const validateLength = (input) => {
+	return input.trim() !== "";
+};
