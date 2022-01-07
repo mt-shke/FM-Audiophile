@@ -7,13 +7,10 @@ import { useState } from "react";
 import SectionCategoriesMenu from "../../home/SectionCategoriesMenu";
 import Background from "../../UI/background/Background";
 import CartModal from "../../cart/CartModal";
-import { useStore } from "../../store/store";
 
 const Header = (props) => {
 	const [menu, setMenu] = useState(false);
 	const [cart, setCart] = useState(false);
-	const store = useStore()[0];
-	const itemsInCart = store.cart.items.reduce((a, b) => +a + +b.quantity, 0);
 
 	const menuHandler = () => {
 		setMenu((o) => !o);
@@ -34,15 +31,8 @@ const Header = (props) => {
 				<Icon onClick={menuHandler} className="sm:hidden" src={hamburgerIcon} alt="hamburger icon" />
 				<Logo />
 				<NavBar className="hidden sm:gridc" />
-				<Icon className="gridc" onClick={cartHandler} src={cartIcon} alt="cart icon">
-					{itemsInCart ? (
-						<span className="absolute gridc -top-6 right-0 w-5 h-5 rounded-full text-xs font-bold bg-white text-orange">
-							{itemsInCart}
-						</span>
-					) : (
-						""
-					)}
-				</Icon>
+				<Icon className="gridc" onClick={cartHandler} src={cartIcon} alt="cart icon" />
+
 				{cart && <CartModal closeCart={cartHandler} />}
 			</header>
 			<hr className="full-w max-w-[1392px] mx-auto border-t border-para-gray" />

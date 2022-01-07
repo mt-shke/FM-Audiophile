@@ -7,12 +7,13 @@ import Icon from "../../UI/icon/Icon";
 
 const Footer = (props) => {
 	return (
-		<footer className="ctn w-full flex-c6 px-6 py-10 text-center sm:text-left sm:py-24 sm:gap-12">
+		<footer className="ctn relative w-full flex-c6 px-6 py-10 text-center sm:text-left sm:py-24 sm:gap-12">
 			<section className="flex-c6 items-center sm:w-full sm:flex-row sm:justify-between">
+				<span className="absolute w-[90px] h-1 top-0 bg-orange opacity-90 md:w-[120px] md:h-[6px]"></span>
 				<Logo />
 				<NavBar />
 			</section>
-			<section className="flex-c6 text-m-gray sm:grid sm:grid-cols-2 items-center ">
+			<section className="flex-c6 text-para-gray sm:grid sm:grid-cols-2 items-center ">
 				<article className="flex-c6 sm:text-lg">
 					<p>
 						{`Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers

@@ -1,51 +1,78 @@
 import ButtonGoBack from "../UI/button/ButtonGoBack";
+import Background from "../UI/background/Background";
 import Summary from "./Summary";
 import Form from "./Form";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
 const SectionCheckout = (props) => {
-	const submitHandler = (e) => {
+	const [errorMessage, setErrorMessage] = useState("");
+	const router = useRouter();
+
+	const errorMessageHandler = () => {
+		setErrorMessage("");
+	};
+
+	const submitHandler = (e, items) => {
 		e.preventDefault();
-		// const result = Array.from(e.target.closest("form"))
-		// 	.filter((elem) => elem.tagName === "INPUT")
-		// 	.map((elem) => ({
-		// 		[elem.id]: elem.value,
-		// 	}));
-		const result = Array.from(e.target.closest("form"))
+		const result = Array.from(e.target.closest("div").firstChild)
 			.filter((elem) => elem.tagName === "INPUT")
 			.map((elem) => [elem.id, elem.value]);
-
-		const arr = { 1: "one", b: "cdef", fruit: "apple", plant: "sunflower" };
-		console.log(arr);
-		console.log("entries", Object.entries(arr));
-		console.log("values", Object.values(arr));
-		console.log(Object.fromEntries(Object.entries(arr)));
 
 		const emptyField = Object.values(result)
 			.map((elem) => elem[1])
 			.some((elem) => elem === "");
 
 		if (emptyField) {
-			console.log("A field is missing, return error message & stop access to cardCheckout");
+			setErrorMessage("Please complete all required fields");
 			return;
 		}
+		const commandDetails = Object.fromEntries(result);
+		createCheckoutSession(items, commandDetails);
+	};
 
-		const data = Object.fromEntries(result);
+	const createCheckoutSession = async (items, commandDetails) => {
+		const result = await axios.post("http://localhost:3000/api/stripe/create-checkout-session", items, {
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+		if (result) {
+			const sessionId = result.data.url
+				.toString()
+				.replace("https://checkout.stripe.com/pay/", "")
+				.split("#")[0];
+			const command = { ...commandDetails, id: sessionId, items: items };
+			const response = await setCommandToDB(command);
+			if (response) router.push(result.data.url);
+		}
+	};
 
-		console.log("All field ok: routerPush cardCheckout then send command to db");
+	const setCommandToDB = async (command) => {
+		const response = await addDoc(collection(db, "commands"), {
+			...command,
+		});
+		return response;
 	};
 
 	return (
 		<section className="flex-c6 items-start py-16 bg-gray sm:py-20 md:gap-32 md:py-32">
-			<div className="w-full flex-c6 rounded-md bg-grey md:p-0">
-				<ButtonGoBack />
-				<form
-					onSubmit={submitHandler}
-					className="w-full flex flex-col gap-4 bg-gray md:grid md:grid-cols-5 xl:grid-cols-3 md:items-start"
-				>
-					<Form />
-					<Summary />
-				</form>
+			<ButtonGoBack />
+			<div className="w-full flex flex-col gap-4 bg-gray md:grid md:grid-cols-5 xl:grid-cols-3 md:items-start">
+				<Form />
+				<Summary submit={submitHandler} />
 			</div>
+			{errorMessage && (
+				<>
+					<Background className="bg-black fixed z-[70] inset-0 opacity-75" />
+					<div onClick={errorMessageHandler} className="fixed gridc z-[80] inset-0 ">
+						<p className="p-6 md:p-20 bg-white text-orange rounded-lg">{errorMessage}</p>
+					</div>
+				</>
+			)}
 		</section>
 	);
 };

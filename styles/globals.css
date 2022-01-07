@@ -41,10 +41,6 @@
 	h6 {
 		@apply font-bold uppercase text-[18px] leading-[24px] tracking-[1.3px];
 	}
-
-	li:hover {
-		@apply text-orange;
-	}
 }
 
 @layer components {

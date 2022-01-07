@@ -1,5 +1,5 @@
-export const numberToUsFormat = (numberToConvert) => {
-	return;
+export const convertEnFormat = (numberToConvert) => {
+	return new Intl.NumberFormat("en-EN", { maximumSignificantDigits: 3 }).format(numberToConvert);
 };
 
 export const shortenName = (productName) => {
@@ -15,9 +15,24 @@ export const shortenName = (productName) => {
 		.trim();
 };
 
-export const validateEmail = (input) => {
+export const validateLength = (input) => {
+	// regex => should only x format etc
 	return input.trim() !== "";
 };
-export const validateLength = (input) => {
-	return input.trim() !== "";
+
+export const validateNumber = (input) => {
+	const text = /^[0-9]*$/;
+	return text.test(Number(input)) && input.trim() !== "";
+};
+
+export const validateEmail = (email) => {
+	const text = /[a-zA-Z0-9_\.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9\.]{2,5}$/;
+	return text.test(String(email).toLowerCase());
+};
+
+export const getUrlSessionId = () => {
+	return window.location.href
+		.replace(window.location.origin, "")
+		.replace(window.location.pathname, "")
+		.replace("?success=true&session_id=", "");
 };

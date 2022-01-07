@@ -1,10 +1,7 @@
 import Image from "next/image";
 
 const ImgComponent = (props) => {
-	let widthFull = "w-full h-full";
-	if (props.className?.includes("w-") || props.className?.includes("h-")) {
-		widthFull = "";
-	}
+	const widthFull = props.className?.includes("w-") || props.className?.includes("h-") ? "" : "w-full h-full";
 
 	return (
 		<div className={`${widthFull} ${props.className ?? ""}`}>

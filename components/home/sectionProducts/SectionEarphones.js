@@ -12,7 +12,7 @@ const SectionEarphones = (props) => {
 				src={img}
 				alt="earphones"
 			/>
-			<div className="relative w-full flex-c6 aspect-[14/9] justify-center items-start pl-6 bg-s-grey text-left rounded-lg sm:pl-12 sm:aspect-auto">
+			<div className="relative w-full flex-c6 aspect-[14/9] justify-center items-start pl-6 bg-gray text-left rounded-lg sm:pl-12 sm:aspect-auto">
 				<h2>yx1 earphones</h2>
 				<Link href="/earphones/yx1-earphones">
 					<a>

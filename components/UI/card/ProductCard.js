@@ -35,7 +35,7 @@ const ProductCard = (props) => {
 			>
 				{item.new && <span className="over-style uppercase text-orange">New product</span>}
 				<h2 className="px-6 md:px-0">{item.name}</h2>
-				<p className="text-para-gray">{item.description}</p>
+				<p className="text-para-gray xl:leading-10">{item.description}</p>
 				<Link href={slug}>
 					<a>
 						<Button>see product</Button>

@@ -16,6 +16,10 @@ const configureCartStore = () => {
 			const newCart = { ...curState.cart, items: newItems };
 			return { cart: newCart };
 		},
+		ADD_LOCAL_CART: (curState, payload) => {
+			const newCart = payload;
+			return { cart: newCart };
+		},
 
 		UPDATE_QUANTITY_IN_CART: (curState, payload) => {
 			let newItems = [];

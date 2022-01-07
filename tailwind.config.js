@@ -5,14 +5,11 @@ module.exports = {
 			orange: "#D87D4A",
 			red: "#FF0000",
 			black: "#101010",
-			"s-black": "rgba(0, 0, 0, 0.4)",
 			gray: "#F1F1F1",
-			"s-grey": "#f1f1f1",
-			"light-gray": "#333333",
-			"m-gray": "#777777",
-			"b-gray": "#4c4c4c",
-			"para-gray": "#7e7e7e",
 			white: "#FFFFFF",
+			green: "#58bc34",
+			"para-gray": "#7e7e7e",
+			"s-black": "rgba(0, 0, 0, 0.4)",
 			"s-white": "#FAFAFA",
 			"s-orange": "#FBAF85",
 			transparent: "rgb(0, 0, 0, 0)",
@@ -34,6 +31,42 @@ module.exports = {
 				DEFAULT: "0rem",
 				sm: "0rem",
 				md: "0rem",
+			},
+		},
+		animation: {
+			spinning: " spinning 1s linear infinite",
+			wiggle: "wiggle 1s ease-in-out infinite",
+			ping: "ping 2s ease-in-out",
+		},
+
+		keyframes: {
+			spinning: {
+				"0%": {
+					transform: " rotate(0deg)",
+				},
+				"100%": {
+					transform: "rotate(360deg)",
+				},
+			},
+			wiggle: {
+				"0%, 100%": {
+					transform: "rotate(-90deg)",
+				},
+				"50%": {
+					transform: "rotate(90deg)",
+				},
+			},
+			ping: {
+				"0%": {
+					transform: "scale(1)",
+					opacity: "1",
+				},
+				"75%": {
+					opacity: "0.3",
+				},
+				"100%": {
+					transform: "scale(1)",
+				},
 			},
 		},
 		extend: {

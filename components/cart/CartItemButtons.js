@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useStore } from "../store/store";
+import { setLocalCartItems } from "../utils/localCart";
 
 const CartItemButtons = (props) => {
 	const [quantity, setQuantity] = useState(props.item.quantity);
+	const store = useStore()[0];
 	const dispatch = useStore()[1];
 
 	useEffect(() => {

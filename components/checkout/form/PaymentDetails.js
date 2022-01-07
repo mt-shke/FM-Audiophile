@@ -32,23 +32,25 @@ const PaymentDetails = (props) => {
 					Cash on Delivery
 				</li>
 			</ul>
-			{eMoney && (
-				<>
-					<LabelInput
-						label="e-Money Number"
-						id="eMoneyNumber"
-						name="eMoneyNumber"
-						validation={validateLength}
-					/>
-					<LabelInput label="e-Money PIN" id="eMoneyPIN" name="eMoneyPIN" validation={validateLength} />
-				</>
-			)}
-			{!eMoney && (
-				<p className="text-para-gray">
-					{`The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your
+			<div className="min-h-[170px]">
+				{eMoney && (
+					<>
+						<LabelInput
+							label="e-Money Number"
+							id="eMoneyNumber"
+							name="eMoneyNumber"
+							validation={validateLength}
+						/>
+						<LabelInput label="e-Money PIN" id="eMoneyPIN" name="eMoneyPIN" validation={validateLength} />
+					</>
+				)}
+				{!eMoney && (
+					<p className="text-para-gray">
+						{`The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your
 					residence. Just make sure your address is correct so that your order will not be cancelled.`}
-				</p>
-			)}
+					</p>
+				)}
+			</div>
 		</div>
 	);
 };

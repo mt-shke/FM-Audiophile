@@ -7,7 +7,7 @@ const CartItem = (props) => {
 	const shortenedName = shortenName(name);
 
 	return (
-		<li className="flex flex-row gap-3 items-center text-sm" key={shortenedName}>
+		<li className={`${props.className ?? ""} flex flex-row gap-3 items-center text-sm`} key={shortenedName}>
 			<ImgComponent
 				className="relative w-fit block h-16 aspect-square"
 				icss="rounded-lg"

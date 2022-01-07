@@ -15,17 +15,15 @@ const ProductButtons = (props) => {
 	};
 
 	const valueHandler = (e) => {
-		const enteredValue = e.target.value;
-		const plus = e.target.classList.contains("plus");
-		const minus = e.target.classList.contains("minus");
-		if (plus) {
+		if (e.target.classList.contains("plus")) {
 			setQuantity((previous) => (+previous >= 999 ? 999 : +previous + 1));
 			return;
 		}
-		if (minus) {
+		if (e.target.classList.contains("minus")) {
 			setQuantity((previous) => (+previous === 0 ? 0 : +previous - 1));
 			return;
 		}
+		const enteredValue = e.target.value;
 		setQuantity(+enteredValue >= 999 ? 999 : +enteredValue <= 0 ? 0 : +enteredValue);
 	};
 
