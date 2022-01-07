@@ -218,10 +218,6 @@ module.exports = {
 
 </details>
 
-</details>
-
-## Code
-
 <details>
 <summary>Object-position</summary>
 
@@ -238,6 +234,10 @@ module.exports = {
 ```
 
 </details>
+
+</details>
+
+## Code
 
 <details>
 <summary>Svg to component</summary>
@@ -305,7 +305,6 @@ export default ValidateIcon;
 
 ```js
 // npm i stripe @stripe/react-stripe-js @stripe/stripe-js
-
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const handler = async (req, res) => {
@@ -324,11 +323,22 @@ const handler = async (req, res) => {
 				};
 			});
 
-			// Create Checkout Sessions from body params.
+			//  line_items : [{
+			// 		price_data: {
+			// 			currency: "usd",
+			// 			product_data: {
+			// 				name: item.name,
+			// 			},
+			// 			unit_amount: +item.price * 100,
+			// 		},
+			// 		quantity: item.quantity,
+			// 	};
+			// }, {}, {}]
+
 			const session = await stripe.checkout.sessions.create({
 				line_items: products,
 				mode: "payment",
-				success_url: `${req.headers.origin}/checkout-success/?success=true`,
+				success_url: `${req.headers.origin}/checkout-success/?success=true&session_id={CHECKOUT_SESSION_ID}`,
 				cancel_url: `${req.headers.origin}/?canceled=true`,
 			});
 			res.json({ url: session.url });
@@ -347,7 +357,10 @@ export default handler;
 </details>
 
 <details>
-<summary>Firebase - Firestore</summary>
+<summary>Firebase</summary>
+
+<details>
+<summary>Config</summary>
 
 clientApp.js
 
@@ -383,5 +396,32 @@ const app = initializeApp(firebaseConfig);
 // const auth = getAuth(firebaseApp);
 const db = getFirestore();
 ```
+
+</details>
+
+<details>
+<summary>Commands</summary>
+
+```js
+import { addDoc, getDocs, collection } from "firebase/firestore";
+
+// addDoc
+const setCommandToDB = async (item) => {
+	const response = await addDoc(collection(db, "commands"), {
+		...item,
+	});
+	return response;
+};
+
+// GetDocs, docs.foreach((doc) doc => doc.data())
+const commands = await getDocs(collection(db, "commands"));
+commands.forEach((doc) => {
+	if (doc.data().id === sessionId) {
+		setCommand(doc.data());
+	}
+});
+```
+
+</details>
 
 </details>
