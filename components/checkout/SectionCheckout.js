@@ -36,7 +36,7 @@ const SectionCheckout = (props) => {
 
 	const createCheckoutSession = async (items, commandDetails) => {
 		const result = await axios.post(
-			"https://fm-audiophile.vercel.app/stripe/create-checkout-session",
+			"https://fm-audiophile.vercel.app/api/stripe/create-checkout-session",
 			items,
 			{
 				headers: {
