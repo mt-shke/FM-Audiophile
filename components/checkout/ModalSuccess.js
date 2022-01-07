@@ -7,6 +7,7 @@ import ValidateIcon from "../UI/icon/ValidateIcon";
 const ModalSuccess = (props) => {
 	const [others, displayOthers] = useState(false);
 	const commandItems = props.command.items.filter((item) => item.name !== "Shipping cost");
+	const shippingPrice = props.command.items.find((item) => item.name === "Shipping cost").price;
 	const total = commandItems.reduce((acc, curr) => acc + curr.quantity * curr.price, 0);
 	const othersStyle = others ? "" : "hidden";
 
@@ -52,7 +53,7 @@ const ModalSuccess = (props) => {
 				</ul>
 				<div className="w-full flex flex-col gap-2 px-6 py-4 bg-black rounded-b-lg sm:col-span-3 sm:rounded-b-none sm:rounded-r-lg sm:justify-end sm:py-10">
 					<span className="text-para-gray">GRAND TOTAL</span>
-					<span className="text-white">$ {total}</span>
+					<span className="text-white">$ {total + shippingPrice}</span>
 				</div>
 			</div>
 			<Link href="/">

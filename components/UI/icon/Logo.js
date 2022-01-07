@@ -5,7 +5,7 @@ import Link from "next/link";
 const Logo = (props) => {
 	return (
 		<span className={`icon-logo relative ${props.className ?? ""}`} onClick={props.onClick}>
-			<Link href="/checkout-success">
+			<Link href="/">
 				<a>
 					<Image objectFit="contain" src={logo} layout="fill" alt="logo" />
 				</a>
