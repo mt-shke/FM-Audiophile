@@ -1,23 +1,14 @@
 import Button from "../UI/button/Button";
 import { useStore } from "../store/store";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CartItem from "./CartItem";
 import Link from "next/link";
-import { setLocalCartItems, getLocalCart } from "../utils/localCart";
 
 const CartModal = (props) => {
 	const [store, dispatch] = useStore();
 	const [itemsInCart, setItemsInCart] = useState(store.cart.items);
 	const price = itemsInCart?.reduce((a, b) => a + b.quantity * b.price, 0);
 	const isNotEmpty = itemsInCart.length >= 1 ? <span>{`(${itemsInCart.length})`}</span> : "";
-
-	useEffect(() => {
-		setLocalCartItems(itemsInCart);
-	});
-
-	const checkLocalCart = () => {
-		const localCart = getLocalCart();
-	};
 
 	const removeAllHandler = () => {
 		setItemsInCart([]);

@@ -35,11 +35,15 @@ const SectionCheckout = (props) => {
 	};
 
 	const createCheckoutSession = async (items, commandDetails) => {
-		const result = await axios.post("http://localhost:3000/api/stripe/create-checkout-session", items, {
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
+		const result = await axios.post(
+			"https://fm-audiophile.vercel.app/stripe/create-checkout-session",
+			items,
+			{
+				headers: {
+					"Content-Type": "application/json",
+				},
+			}
+		);
 		if (result) {
 			const sessionId = result.data.url
 				.toString()

@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Background from "../UI/background/Background";
-import { resetLocalCart } from "../utils/localCart";
 import ModalSuccess from "./ModalSuccess";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import { getUrlSessionId } from "../utils/formValidation";
+// import { resetLocalCart } from "../utils/localCart";
 
 const SectionCheckoutSuccess = (props) => {
 	const [command, setCommand] = useState("");
@@ -15,7 +15,7 @@ const SectionCheckoutSuccess = (props) => {
 		if (command) return;
 		checkCommand();
 		setTimeout(() => {
-			resetLocalCart();
+			// resetLocalCart();
 			router.push("/");
 		}, 15000);
 	}, [command]);
