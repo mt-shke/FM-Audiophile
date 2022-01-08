@@ -45,7 +45,7 @@ const SectionCheckout = (props) => {
 				.toString()
 				.replace("https://checkout.stripe.com/pay/", "")
 				.split("#")[0];
-			const command = { ...commandDetails, id: sessionId, items: items };
+			const command = { ...commandDetails, createdAt: new Date(), id: sessionId, items: items };
 			const response = await setCommandToDB(command);
 			if (response) router.push(result.data.url);
 		}

@@ -8,7 +8,7 @@
 - Style
 - Components
 - Functionnalities
-- Backend api/db ? => Learn more about firebase
+- Firebase
 
 </details>
 
@@ -205,7 +205,7 @@ module.exports = {
 			fontSize: {
 				xs: ["12px", "18px"],
 			},
-			// or add her if extends /!\
+			/!\ if extended theme => add here
 		},
 	},
 	plugins: [],
@@ -269,7 +269,7 @@ export default ValidateIcon;
 </details>
 
 <details>
-<summary>Data</summary>
+<summary>Object.methods(data)</summary>
 
 ```js
 // const data = { 1: "one", b: "cdef", fruit: "apple", plant: "sunflower" };
@@ -400,7 +400,7 @@ const db = getFirestore();
 </details>
 
 <details>
-<summary>Commands</summary>
+<summary>Create/Read commands</summary>
 
 ```js
 import { addDoc, getDocs, collection } from "firebase/firestore";
