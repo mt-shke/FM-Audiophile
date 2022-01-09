@@ -88,6 +88,17 @@
 }
 
 @layer utilities {
+	.radial-landing {
+		background-image: radial-gradient(
+			closest-corner at 70% 55%,
+			transparent,
+			rgb(16, 16, 16, 10%),
+			rgb(16, 16, 16, 25%),
+			rgb(16, 16, 16, 99%),
+			rgb(16, 16, 16)
+		);
+	}
+
 	.noArrows::-webkit-outer-spin-button,
 	.noArrows::-webkit-inner-spin-button {
 		-webkit-appearance: none;

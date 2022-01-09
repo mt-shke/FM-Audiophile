@@ -10,7 +10,7 @@ const SectionIntro = (props) => {
 					Bringing you the <strong className="text-s-orange">best</strong> audio gear
 				</h1>
 
-				<p className="text-para-gray sm:text-base md:text-xl">
+				<p className="text-para-gray sm:text-base md:text-xl xl:leading-9 xl:text-xl">
 					Located at the heart of New York City, Audiophile is the premier store for high end headphones,
 					earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms
 					available for you to browse and experience a wide range of our products. Stop by our store to meet

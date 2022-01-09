@@ -10,6 +10,7 @@ import { db } from "../utils/firebase";
 
 const SectionCheckout = (props) => {
 	const [errorMessage, setErrorMessage] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const router = useRouter();
 
 	const errorMessageHandler = () => {
@@ -35,11 +36,18 @@ const SectionCheckout = (props) => {
 	};
 
 	const createCheckoutSession = async (items, commandDetails) => {
+		if (isSubmitting) return;
+		setIsSubmitting(true);
 		const result = await axios.post("/api/stripe/create-checkout-session", items, {
 			headers: {
 				"Content-Type": "application/json",
 			},
 		});
+		if (!result) {
+			// strip checkout session failed message
+			setIsSubmitting(false);
+		}
+
 		if (result) {
 			const sessionId = result.data.url
 				.toString()
@@ -47,7 +55,14 @@ const SectionCheckout = (props) => {
 				.split("#")[0];
 			const command = { ...commandDetails, createdAt: new Date(), id: sessionId, items: items };
 			const response = await setCommandToDB(command);
-			if (response) router.push(result.data.url);
+			if (!response) {
+				// request failed message
+				setIsSubmitting(false);
+			}
+			if (response) {
+				setIsSubmitting(false);
+				router.push(result.data.url);
+			}
 		}
 	};
 

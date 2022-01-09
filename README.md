@@ -296,6 +296,19 @@ export default ValidateIcon;
 // 	}));
 ```
 
+
+Merge 2 arrays into 1 object
+```js
+// const body = Object.assign.apply(
+// 	{},
+// 	sp.map((elem, index) => ({ [elem]: em[index] }))
+// );
+// console.log(body);
+// };
+
+```
+
+
 </details>
 
 </details>
