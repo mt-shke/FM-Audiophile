@@ -90,11 +90,12 @@
 @layer utilities {
 	.radial-landing {
 		background-image: radial-gradient(
-			closest-corner at 70% 55%,
+			closest-corner at 72% 55%,
 			transparent,
 			rgb(16, 16, 16, 10%),
-			rgb(16, 16, 16, 25%),
-			rgb(16, 16, 16, 99%),
+			rgb(16, 16, 16, 30%),
+			rgb(16, 16, 16, 70%),
+			rgb(16, 16, 16),
 			rgb(16, 16, 16)
 		);
 	}

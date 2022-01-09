@@ -10,7 +10,7 @@ const ProductDetailsPage = (props) => {
 		<>
 			<Head>
 				<title>{props.item[0].name}</title>
-				<meta title="description" content={props.item[0].description} />
+				<meta name="description" content={props.item[0].description} />
 			</Head>
 			<SectionProductDetails item={props.item[0]} />
 			<SectionSuggestion item={props.item[0]} suggest={props.suggest} />
