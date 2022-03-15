@@ -8,7 +8,6 @@
 - Style
 - Components
 - Functionnalities
-- Firebase
 
 </details>
 
@@ -296,8 +295,8 @@ export default ValidateIcon;
 // 	}));
 ```
 
-
 Merge 2 arrays into 1 object
+
 ```js
 // const body = Object.assign.apply(
 // 	{},
@@ -305,9 +304,7 @@ Merge 2 arrays into 1 object
 // );
 // console.log(body);
 // };
-
 ```
-
 
 </details>
 

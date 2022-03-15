@@ -14,4 +14,16 @@ const Home = () => {
 	);
 };
 
+export async function getStaticProps() {
+	try {
+		return {
+			props: {},
+		};
+	} catch (error) {
+		return {
+			props: {},
+		};
+	}
+}
+
 export default Home;
